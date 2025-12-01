@@ -8,7 +8,7 @@ import DailyHoroscope from './components/Astrology/DailyHoroscope';
 import RashiFinder from './components/Astrology/RashiFinder'; 
 import Home from './components/Astrology/Home';
 import HoroscopeAnalytics from './components/Layout/Contact';
-
+import ContactPage from './components/Layout/Contact';
 
 function App() {
   const [selectedRashi, setSelectedRashi] = useState(null);
@@ -27,6 +27,7 @@ function App() {
             <Route path="/RashiFinder" element={<RashiFinder />} />
             <Route path="/DailyHoroscope" element={<DailyHoroscope />} />
             <Route path="/HoroscopeAnalytics" element={<HoroscopeAnalytics />} />
+            <Route path="/Contact" element={<ContactPage />} />
             {/* Add more routes as needed */}
           </Routes>
       

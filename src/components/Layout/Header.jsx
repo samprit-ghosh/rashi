@@ -10,7 +10,7 @@ const Header = () => {
     { id: 'home', path: '/', label: 'Home' },
     { id: 'daily', path: '/DailyHoroscope', label: 'Daily Horoscope' },
     { id: 'zodiac', path: '/RashiFinder', label: 'Rashi Finder' },
-    { id: 'compatibility', path: '/compatibility', label: 'Compatibility' },
+    { id: 'compatibility', path: '/Contact', label: 'Contact' },
     { id: 'astrology', path: '/astrology', label: 'Astrology' }
 
   ];
