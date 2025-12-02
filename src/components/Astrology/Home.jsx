@@ -1,8 +1,9 @@
 import React from 'react'
 import AboutSection from './../Layout/About';
-
+import { useNavigate } from "react-router-dom";
+import KundliUploadPage from "./KundliUploadPage"
 function Home() {
-
+  const navigate = useNavigate();
 
   const zodiacSigns = [
     { name: 'Aries', icon: '♈', dates: 'Mar 21 - Apr 19' },
@@ -23,7 +24,7 @@ function Home() {
     <div>
         
         
-           <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900">
+        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {/* Hero Section */}
           <div className="text-center mb-16">
@@ -58,7 +59,9 @@ function Home() {
 
           {/* Call to Action */}
           <div className="text-center mt-16">
-            <button className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl">
+            <button 
+                 onClick={() => navigate("/DailyHoroscope")}
+            className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl">
               Get Your Daily Horoscope
             </button>
           </div>
@@ -70,7 +73,7 @@ function Home() {
         
         
         
-        
+        <KundliUploadPage/>
         <AboutSection/>
         
         </div>

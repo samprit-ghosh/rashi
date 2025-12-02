@@ -1,4 +1,12 @@
+
+
+import { useNavigate } from "react-router-dom";
 const AboutSection = () => {
+
+
+  const navigate = useNavigate();
+
+  
   return (
     <section className="relative bg-gradient-to-b from-gray-900 to-purple-900 text-white py-16 px-4 sm:px-6 lg:px-8 overflow-hidden  pt-5">
       {/* Background Elements */}
@@ -119,7 +127,9 @@ const AboutSection = () => {
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
               Select your Rashi from the 12 zodiac signs and unlock personalized daily insights powered by AI and celestial wisdom.
             </p>
-            <button className="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:from-amber-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <button
+              onClick={() => navigate("/RashiFinder")}
+            className="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:from-amber-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
               Choose Your Rashi
             </button>
           </div>

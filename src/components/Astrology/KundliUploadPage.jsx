@@ -155,13 +155,12 @@ export default function KundliUploadPage() {
           </div>
         </div>
 
-        {/* Main Content Container with equal height columns */}
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="grid lg:grid-cols-3 gap-8 ">
           {/* Left Column - Upload Section */}
-          <div className="lg:w-2/3">
-            <div className="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/20 p-8 h-full">
+          <div className="lg:col-span-2">
+            <div className="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/20 p-8">
               {uploadStep === 1 && (
-                <div className="h-full flex flex-col">
+                <div>
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 rounded-full bg-purple-900/50 flex items-center justify-center mr-4">
                       <Upload className="w-6 h-6 text-purple-400" />
@@ -173,7 +172,7 @@ export default function KundliUploadPage() {
                   </div>
 
                   <div
-                    className="border-3 border-dashed border-white/20 rounded-xl p-12 text-center transition-all duration-300 hover:border-purple-400 hover:bg-white/5 cursor-pointer flex-grow flex flex-col items-center justify-center mb-6"
+                    className="border-3 border-dashed border-white/20 rounded-xl p-12 text-center transition-all duration-300 hover:border-purple-400 hover:bg-white/5 cursor-pointer"
                     onClick={() => fileInputRef.current.click()}
                     onDragOver={handleDragOver}
                     onDrop={handleDrop}
@@ -230,7 +229,7 @@ export default function KundliUploadPage() {
               )}
 
               {uploadStep === 2 && (
-                <div className="h-full flex flex-col">
+                <div>
                   <div className="flex items-center mb-8">
                     <div className="w-12 h-12 rounded-full bg-cyan-900/50 flex items-center justify-center mr-4">
                       <User className="w-6 h-6 text-cyan-400" />
@@ -241,7 +240,7 @@ export default function KundliUploadPage() {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6 flex-grow">
+                  <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-purple-300 mb-2">
                         <User className="w-4 h-4 inline mr-2" />
@@ -331,7 +330,7 @@ export default function KundliUploadPage() {
                     </div>
                   </div>
 
-                  <div className="flex justify-between mt-8 pt-6 border-t border-white/10">
+                  <div className="flex justify-between mt-8">
                     <button
                       onClick={() => setUploadStep(1)}
                       className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/20 transition-all duration-300"
@@ -349,7 +348,7 @@ export default function KundliUploadPage() {
               )}
 
               {uploadStep === 3 && (
-                <form onSubmit={handleSubmit} className="h-full flex flex-col">
+                <form onSubmit={handleSubmit}>
                   <div className="flex items-center mb-8">
                     <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-900/50 to-cyan-900/50 flex items-center justify-center mr-4">
                       <FileText className="w-6 h-6 text-purple-400" />
@@ -360,7 +359,7 @@ export default function KundliUploadPage() {
                     </div>
                   </div>
 
-                  <div className="mb-6 flex-grow">
+                  <div className="mb-6">
                     <label className="block text-sm font-medium text-purple-300 mb-3">
                       What guidance are you seeking?
                     </label>
@@ -427,7 +426,7 @@ export default function KundliUploadPage() {
                     </div>
                   </div>
 
-                  <div className="mb-6">
+                  <div className="mb-8">
                     <label className="flex items-start cursor-pointer">
                       <input
                         type="checkbox"
@@ -449,7 +448,7 @@ export default function KundliUploadPage() {
                     </label>
                   </div>
 
-                  <div className="flex justify-between mt-8 pt-6 border-t border-white/10">
+                  <div className="flex justify-between">
                     <button
                       type="button"
                       onClick={() => setUploadStep(2)}
@@ -469,12 +468,12 @@ export default function KundliUploadPage() {
               )}
 
               {uploadStep === 4 && (
-                <div className="h-full flex flex-col justify-center py-12">
+                <div className="text-center py-12">
                   <div className="w-24 h-24 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center mx-auto mb-6">
                     <div className="w-12 h-12 text-white">✓</div>
                   </div>
-                  <h2 className="text-3xl font-bold text-white mb-4 text-center">Request Submitted Successfully!</h2>
-                  <p className="text-xl text-purple-300 mb-8 text-center">
+                  <h2 className="text-3xl font-bold text-white mb-4">Request Submitted Successfully!</h2>
+                  <p className="text-xl text-purple-300 mb-8">
                     Your Kundli analysis request has been received. Our expert astrologers will review your chart and provide personalized guidance within 24-48 hours.
                   </p>
                   <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -482,22 +481,22 @@ export default function KundliUploadPage() {
                       <div className="w-12 h-12 rounded-full bg-purple-900/30 flex items-center justify-center mx-auto mb-4">
                         <Clock className="w-6 h-6 text-purple-400" />
                       </div>
-                      <h3 className="font-semibold text-white mb-2 text-center">Processing Time</h3>
-                      <p className="text-sm text-purple-300 text-center">24-48 hours</p>
+                      <h3 className="font-semibold text-white mb-2">Processing Time</h3>
+                      <p className="text-sm text-purple-300">24-48 hours</p>
                     </div>
                     <div className="bg-white/5 rounded-xl p-6 border border-white/20">
                       <div className="w-12 h-12 rounded-full bg-cyan-900/30 flex items-center justify-center mx-auto mb-4">
                         <Mail className="w-6 h-6 text-cyan-400" />
                       </div>
-                      <h3 className="font-semibold text-white mb-2 text-center">Updates</h3>
-                      <p className="text-sm text-purple-300 text-center">Sent to your email</p>
+                      <h3 className="font-semibold text-white mb-2">Updates</h3>
+                      <p className="text-sm text-purple-300">Sent to your email</p>
                     </div>
                     <div className="bg-white/5 rounded-xl p-6 border border-white/20">
                       <div className="w-12 h-12 rounded-full bg-emerald-900/30 flex items-center justify-center mx-auto mb-4">
                         <Shield className="w-6 h-6 text-emerald-400" />
                       </div>
-                      <h3 className="font-semibold text-white mb-2 text-center">Confidential</h3>
-                      <p className="text-sm text-purple-300 text-center">100% Secure & Private</p>
+                      <h3 className="font-semibold text-white mb-2">Confidential</h3>
+                      <p className="text-sm text-purple-300">100% Secure & Private</p>
                     </div>
                   </div>
                   <div className="flex justify-center space-x-4">
@@ -533,63 +532,76 @@ export default function KundliUploadPage() {
           </div>
 
           {/* Right Column - Info & Features */}
-          <div className="lg:w-1/3">
-            <div className="sticky top-8 space-y-6 h-full">
-              {/* Uploaded Preview */}
-              {kundliFile && (
-                <div className="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/20 p-6">
-                  <h3 className="text-lg font-semibold text-white mb-4">Uploaded Kundli</h3>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-purple-900/30 to-cyan-900/30 flex items-center justify-center">
-                      <FileText className="w-8 h-8 text-cyan-400" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-white">{kundliFile.name}</h4>
-                      <p className="text-sm text-purple-300">
-                        {(kundliFile.size / 1024).toFixed(2)} KB • PDF
-                      </p>
-                      <button
-                        onClick={() => {
-                          setKundliFile(null);
-                          setPreviewUrl('');
-                          setUploadStep(1);
-                        }}
-                        className="text-sm text-red-400 hover:text-red-300 mt-1"
-                      >
-                        Remove
-                      </button>
-                    </div>
+          <div className="space-y-8">
+            {/* Uploaded Preview */}
+            {kundliFile && (
+              <div className="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/20 p-6">
+                <h3 className="text-lg font-semibold text-white mb-4">Uploaded Kundli</h3>
+                <div className="flex items-center space-x-4">
+                  <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-purple-900/30 to-cyan-900/30 flex items-center justify-center">
+                    <FileText className="w-8 h-8 text-cyan-400" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-white">{kundliFile.name}</h4>
+                    <p className="text-sm text-purple-300">
+                      {(kundliFile.size / 1024).toFixed(2)} KB • PDF
+                    </p>
+                    <button
+                      onClick={() => {
+                        setKundliFile(null);
+                        setPreviewUrl('');
+                        setUploadStep(1);
+                      }}
+                      className="text-sm text-red-400 hover:text-red-300 mt-1"
+                    >
+                      Remove
+                    </button>
                   </div>
                 </div>
-              )}
-
-              {/* Features Card */}
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/20 p-6">
-                <h3 className="text-lg font-semibold text-white mb-6">Why Choose Us?</h3>
-                <div className="space-y-4">
-                  {[
-                    { icon: '⭐', title: 'Expert Astrologers', desc: 'Certified Vedic astrologers with 10+ years experience' },
-                    { icon: '🔒', title: '100% Confidential', desc: 'Your data is encrypted and never shared' },
-                    { icon: '⚡', title: '24-48 Hour Turnaround', desc: 'Quick responses from our experts' },
-                    { icon: '📱', title: 'Digital Delivery', desc: 'Receive guidance via email & app' },
-                  ].map((feature, index) => (
-                    <div key={index} className="flex items-start">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-900/30 to-cyan-900/30 flex items-center justify-center mr-4 flex-shrink-0">
-                        <span className="text-lg">{feature.icon}</span>
-                      </div>
-                      <div>
-                        <h4 className="font-medium text-white">{feature.title}</h4>
-                        <p className="text-sm text-purple-300">{feature.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </div>
+            )}
 
-              {/* Zodiac Signs Card */}
- 
-
+            {/* Features */}
+            <div className="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/20 p-6">
+              <h3 className="text-lg font-semibold text-white mb-6">Why Choose Us?</h3>
+              <div className="space-y-4">
+                {[
+                  { icon: '⭐', title: 'Expert Astrologers', desc: 'Certified Vedic astrologers with 10+ years experience' },
+                  { icon: '🔒', title: '100% Confidential', desc: 'Your data is encrypted and never shared' },
+                  { icon: '⚡', title: '24-48 Hour Turnaround', desc: 'Quick responses from our experts' },
+                  { icon: '📱', title: 'Digital Delivery', desc: 'Receive guidance via email & app' },
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-start">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-900/30 to-cyan-900/30 flex items-center justify-center mr-4">
+                      <span className="text-lg">{feature.icon}</span>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-white">{feature.title}</h4>
+                      <p className="text-sm text-purple-300">{feature.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
+
+            {/* Zodiac Signs */}
+            <div className="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/20 p-6">
+              <h3 className="text-lg font-semibold text-white mb-6">Zodiac Signs</h3>
+              <div className="grid grid-cols-3 gap-3">
+                {zodiacSigns.map((sign) => (
+                  <div
+                    key={sign.name}
+                    className={`bg-gradient-to-br ${sign.color}/20 to-transparent rounded-lg p-3 border border-white/10 text-center hover:scale-105 transition-transform duration-300 cursor-pointer`}
+                  >
+                    <div className="text-2xl mb-1">{sign.icon}</div>
+                    <div className="text-xs font-medium text-white">{sign.name}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Support */}
+   
           </div>
         </div>
       </div>
