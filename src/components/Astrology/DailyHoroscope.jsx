@@ -389,7 +389,7 @@ const RashiWheelHoroscope = () => {
   const currentRashi = wheelItems[currentIndex];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 py-4 sm:py-8 px-3 sm:px-4 relative overflow-hidden">
+    <div className=" bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 py-4 sm:py-8 px-3 sm:px-4 relative overflow-hidden pb-20">
       {/* Animated Background Particles */}
       {particles.map(particle => (
         <div
@@ -740,7 +740,7 @@ const RashiWheelHoroscope = () => {
       </div>
 
       {/* Custom CSS for animations and scrollbar */}
-      <style jsx>{`
+      <style jsx="true">{`
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-10px); }

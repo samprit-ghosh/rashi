@@ -653,7 +653,7 @@ const RashiFinder = () => {
       </div>
 
       {/* Custom CSS for animations */}
-      <style jsx>{`
+      <style jsx="true">{`
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-10px); }
