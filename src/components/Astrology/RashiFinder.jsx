@@ -288,7 +288,7 @@ const RashiFinder = () => {
 
         {/* Loading Overlay */}
         {isLoading && (
-          <div className="fixed inset-0 bg-black/80 backdrop-blur-2xl z-50 flex items-center justify-center">
+          <div className="fixed inset-0 bg-black/80 backdrop-blur-2xl z-100 flex items-center justify-center">
             <div className="bg-black/60 backdrop-blur-2xl rounded-3xl p-12 border border-white/20 shadow-2xl text-center max-w-md mx-4">
               {/* Animated Orbital System */}
               <div className="relative w-32 h-32 mx-auto mb-8">
