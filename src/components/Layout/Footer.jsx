@@ -1,3 +1,6 @@
+
+import React from "react";
+
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white pt-10 pb-6 px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-5">
